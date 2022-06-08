@@ -2,12 +2,12 @@
 
 pragma solidity >=0.8.9 <0.9.0;
 
-import 'erc721a/contracts/ERC721A.sol';
+import 'erc721a/contracts/extensions/ERC721AQueryable.sol';
 import '@openzeppelin/contracts/access/Ownable.sol';
 import '@openzeppelin/contracts/utils/cryptography/MerkleProof.sol';
 import '@openzeppelin/contracts/security/ReentrancyGuard.sol';
 
-contract SpaceTests is ERC721A, Ownable, ReentrancyGuard {
+contract SpaceTests is ERC721AQueryable, Ownable, ReentrancyGuard {
 
   using Strings for uint256;
 
@@ -34,9 +34,9 @@ contract SpaceTests is ERC721A, Ownable, ReentrancyGuard {
     uint256 _maxMintAmountPerTx,
     string memory _hiddenMetadataUri
   ) ERC721A(_tokenName, _tokenSymbol) {
-    cost = _cost;
+    setCost(_cost);
     maxSupply = _maxSupply;
-    maxMintAmountPerTx = _maxMintAmountPerTx;
+    setMaxMintAmountPerTx(_maxMintAmountPerTx);
     setHiddenMetadataUri(_hiddenMetadataUri);
   }
 
@@ -72,35 +72,9 @@ contract SpaceTests is ERC721A, Ownable, ReentrancyGuard {
     _safeMint(_receiver, _mintAmount);
   }
 
-  function walletOfOwner(address _owner) public view returns (uint256[] memory) {
-    uint256 ownerTokenCount = balanceOf(_owner);
-    uint256[] memory ownedTokenIds = new uint256[](ownerTokenCount);
-    uint256 currentTokenId = _startTokenId();
-    uint256 ownedTokenIndex = 0;
-    address latestOwnerAddress;
-
-    while (ownedTokenIndex < ownerTokenCount && currentTokenId <= maxSupply) {
-      TokenOwnership memory ownership = _ownerships[currentTokenId];
-
-      if (!ownership.burned && ownership.addr != address(0)) {
-        latestOwnerAddress = ownership.addr;
-      }
-
-      if (latestOwnerAddress == _owner) {
-        ownedTokenIds[ownedTokenIndex] = currentTokenId;
-
-        ownedTokenIndex++;
-      }
-
-      currentTokenId++;
-    }
-
-    return ownedTokenIds;
-  }
-
   function _startTokenId() internal view virtual override returns (uint256) {
-        return 1;
-    }
+    return 1;
+  }
 
   function tokenURI(uint256 _tokenId) public view virtual override returns (string memory) {
     require(_exists(_tokenId), 'ERC721Metadata: URI query for nonexistent token');
