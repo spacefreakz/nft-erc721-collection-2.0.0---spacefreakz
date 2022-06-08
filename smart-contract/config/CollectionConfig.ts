@@ -10,10 +10,10 @@ const CollectionConfig: CollectionConfigInterface = {
   // yarn rename-contract NEW_CONTRACT_NAME
   // Please DO NOT change it manually!
   contractName: 'SpaceTests',
-  tokenName: 'Space Tests SPESTS',
-  tokenSymbol: 'SPT',
-  hiddenMetadataUri: 'ipfs://QmRoB3hbM9r1KaRQ9x2RyoKaeAAZyrUQGSSvQJ1PvigwPR/hidden.json',
-  maxSupply: 20,
+  tokenName: 'My NFT Token',
+  tokenSymbol: 'MNT',
+  hiddenMetadataUri: 'ipfs://__CID__/hidden.json',
+  maxSupply: 10000,
   whitelistSale: {
     price: 0.05,
     maxMintAmountPerTx: 1,
@@ -26,7 +26,7 @@ const CollectionConfig: CollectionConfigInterface = {
     price: 0.09,
     maxMintAmountPerTx: 5,
   },
-  contractAddress: '0xfA4D8fA05515449C7473f8A0dd18E1AF86a006A4',
+  contractAddress: null,
   marketplaceIdentifier: 'my-nft-token',
   marketplaceConfig: Marketplaces.openSea,
   whitelistAddresses,
