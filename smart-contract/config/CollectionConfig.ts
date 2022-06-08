@@ -10,8 +10,8 @@ const CollectionConfig: CollectionConfigInterface = {
   // yarn rename-contract NEW_CONTRACT_NAME
   // Please DO NOT change it manually!
   contractName: 'SpaceTests',
-  tokenName: 'My NFT Token',
-  tokenSymbol: 'MNT',
+  tokenName: 'SpaceTests SPT',
+  tokenSymbol: 'SPT',
   hiddenMetadataUri: 'ipfs://QmRoB3hbM9r1KaRQ9x2RyoKaeAAZyrUQGSSvQJ1PvigwPR/hidden.json',
   maxSupply: 10000,
   whitelistSale: {
