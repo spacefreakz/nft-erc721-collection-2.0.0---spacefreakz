@@ -65,14 +65,11 @@ export default class Dapp extends React.Component<Props, State> {
   componentDidMount = async () => {
     const browserProvider = await detectEthereumProvider() as ExternalProvider;
 
+    /* Não foi possivel encontrar a Metamask nesse navegador*/
     if (browserProvider?.isMetaMask !== true) {
       this.setError(
         <>
-          We were not able to detect <strong>MetaMask</strong>. We value <strong>privacy and security</strong> a lot so we limit the wallet options on the DAPP.<br />
-          <br />
-          But don't worry! <span className="emoji">😃</span> You can always interact with the smart-contract through <a href={this.generateContractUrl()} target="_blank">{this.state.networkConfig.blockExplorer.name}</a> and <strong>we do our best to provide you with the best user experience possible</strong>, even from there.<br />
-          <br />
-          You can also get your <strong>Whitelist Proof</strong> manually, using the tool below.
+        We were not able to detect <strong>MetaMask</strong>. We value privacy and security a lot so we limit the wallet options on the DAPP.<br/>
         </>,
       );
     }
@@ -168,14 +165,16 @@ export default class Dapp extends React.Component<Props, State> {
 
     navigator.clipboard.writeText(merkleProof);
 
+    /*Merke Proof Manual add
+
     this.setState({
       merkleProofManualAddressFeedbackMessage:
       <>
         <strong>Congratulations!</strong> <span className="emoji">🎉</span><br />
         Your Merkle Proof <strong>has been copied to the clipboard</strong>. You can paste it into <a href={this.generateContractUrl()} target="_blank">{this.state.networkConfig.blockExplorer.name}</a> to claim your tokens.
       </>,
-    });
-  }
+    }); */
+  }  
 
   render() {
     return (
@@ -218,7 +217,7 @@ export default class Dapp extends React.Component<Props, State> {
                   />
                   :
                   <div className="collection-sold-out">
-                    <h2>Tokens have been <strong>sold out</strong>! <span className="emoji">🥳</span></h2>
+                    <h2>Tokens have been <strong>sold out</strong></h2>
 
                     You can buy from our beloved holders on <a href={this.generateMarketplaceUrl()} target="_blank">{CollectionConfig.marketplaceConfig.name}</a>.
                   </div>
