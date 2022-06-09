@@ -30,7 +30,8 @@ body {
 .topnav {
   overflow: hidden;
   background-color: #333;
-  position: fixed !important;
+  position: fixed;
+  z-index: 9999;
   width: 100%;
   height: auto;
   padding: 0px;
