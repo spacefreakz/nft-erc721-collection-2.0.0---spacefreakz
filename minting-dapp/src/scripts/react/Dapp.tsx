@@ -102,7 +102,6 @@ export default class Dapp extends React.Component<Props, State> {
         <a href={this.generateTransactionUrl(receipt.transactionHash)} target="_blank" rel="noopener">View on {this.state.networkConfig.blockExplorer.name}</a>
       </>);
 
-      this.refreshContractState();
       this.setState({loading: false});
     } catch (e) {
       this.setError(e);
@@ -128,7 +127,6 @@ export default class Dapp extends React.Component<Props, State> {
         <a href={this.generateTransactionUrl(receipt.transactionHash)} target="_blank" rel="noopener">View on {this.state.networkConfig.blockExplorer.name}</a>
       </>);
 
-      this.refreshContractState();
       this.setState({loading: false});
     } catch (e) {
       this.setError(e);
@@ -319,19 +317,6 @@ export default class Dapp extends React.Component<Props, State> {
     }
   }
 
-  private async refreshContractState(): Promise<void>
-  {
-    this.setState({
-      maxSupply: (await this.contract.maxSupply()).toNumber(),
-      totalSupply: (await this.contract.totalSupply()).toNumber(),
-      maxMintAmountPerTx: (await this.contract.maxMintAmountPerTx()).toNumber(),
-      tokenPrice: await this.contract.cost(),
-      isPaused: await this.contract.paused(),
-      isWhitelistMintEnabled: await this.contract.whitelistMintEnabled(),
-      isUserInWhitelist: Whitelist.contains(this.state.userAddress ?? ''),
-    });
-  }
-
   private async initWallet(): Promise<void>
   {
     const walletAccounts = await this.provider.listAccounts();
@@ -373,7 +358,15 @@ export default class Dapp extends React.Component<Props, State> {
       this.provider.getSigner(),
     ) as NftContractType;
 
-    this.refreshContractState();
+    this.setState({
+      maxSupply: (await this.contract.maxSupply()).toNumber(),
+      totalSupply: (await this.contract.totalSupply()).toNumber(),
+      maxMintAmountPerTx: (await this.contract.maxMintAmountPerTx()).toNumber(),
+      tokenPrice: await this.contract.cost(),
+      isPaused: await this.contract.paused(),
+      isWhitelistMintEnabled: await this.contract.whitelistMintEnabled(),
+      isUserInWhitelist: Whitelist.contains(this.state.userAddress ?? ''),
+    });
   }
 
   private registerWalletEvents(browserProvider: ExternalProvider): void
