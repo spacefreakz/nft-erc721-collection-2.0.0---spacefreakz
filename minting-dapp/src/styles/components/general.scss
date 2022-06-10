@@ -32,12 +32,13 @@ strong {
 }
 
 #dappContainer{
-  background-image: url('../../images/bg-dapp.jpg');
+  background-image: url('../../images/stars-bg-alt.png');
   @apply bg-center bg-cover bg-local;
 }
 
 .moreScreen1{
-  background-image: url('../../images/bg-moreScreen1.jpg');
+  //background-image: url('../../images/bg-moreScreen1.jpg');
+  background-color: #001c5d; 
   @apply bg-center bg-cover bg-local;
 }
 
