@@ -21,23 +21,23 @@
     <a href="#news">News</a>
     <a href="#contact">Contact</a>
     <a href="#about">About</a>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <a href="javascript:void(0);" class="icon" onclick="showMenu()">
       <i class="fa fa-bars"></i>
     </a>
   </div>
   
   <script>
-    function myFunction() {
-      var x = document.getElementById("myTopnav");
-      if (x.className === "topnav") {
-        x.className += " responsive";
+    function showMenu() {
+      var click = document.getElementById("myTopnav");
+      if (click.className === "topnav") {
+        click.className += " responsive";
       } else {
-        x.className = "topnav";
+        click.className = "topnav";
       }
     }
     </script>
 
-  <div id="div1">
+  <div id="dappContainer">
     <main>
         <img id="logo" src="/build/images/logo.png" alt="Logo" />
         <div id="minting-dapp"></div>
