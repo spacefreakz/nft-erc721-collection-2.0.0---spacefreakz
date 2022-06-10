@@ -28,22 +28,22 @@ strong {
 
 .firstScreen{
   background-image: url('../../images/bg-firstScreen.jpg');
-  @apply bg-center bg-cover bg-fixed;
+  @apply bg-center bg-cover bg-local;
 }
 
 #dappContainer{
   background-image: url('../../images/bg-dapp.jpg');
-  @apply bg-center bg-cover bg-fixed;
+  @apply bg-center bg-cover bg-local;
 }
 
 .moreScreen1{
   background-image: url('../../images/bg-moreScreen1.jpg');
-  @apply bg-center bg-cover bg-fixed;
+  @apply bg-center bg-cover bg-local;
 }
 
 .moreScreen2{
   background-image: url('../../images/bg-moreScreen2.jpg');
-  @apply bg-center bg-cover bg-fixed;
+  @apply bg-center bg-cover bg-local;
 }
 
 main {
