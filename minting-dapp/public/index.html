@@ -5,17 +5,57 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>EVERYTHING WORKS - spacetests</title>
+  <title></title>
   <link rel="icon" type="image/png" href="/build/images/fav.png" />
 
   <link rel="stylesheet" href="/build/main.css">
   <script src="/build/main.js"></script>
-</head>
-<body>
-  <main>
-    <img id="logo" src="/build/images/logo.png" alt="Logo" />
 
-    <div id="minting-dapp"></div>
-  </main>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+</head>
+<body>  
+  <div class="topnav" id="myTopnav">
+    <a href="#home" class="active">Home</a>
+    <a href="#news">News</a>
+    <a href="#contact">Contact</a>
+    <a href="#about">About</a>
+    <a href="javascript:void(0);" class="icon" onclick="showMenu()">
+      <i class="fa fa-bars"></i>
+    </a>
+    <script>
+      function showMenu() {
+        var click = document.getElementById("myTopnav");
+        if (click.className === "topnav") {
+          click.className += " responsive";
+        } else {
+          click.className = "topnav";
+        }
+      }
+      </script>
+  </div>
+
+  <div class="firstScreen">
+    <img id="bannerkilla" src="/build/images/bannerkilla.png" alt="bannerkilla" />
+  </div>
+
+  <div id="dappContainer">
+    <main>
+        <img id="logo" src="/build/images/logo.png" alt="Logo" />
+        <div id="minting-dapp"></div>
+    </main>
+  </div>
+
+  <div class="moreScreen1">
+    <h1>GALLERY</h1>
+    <div class="portraits">
+    <img id="spacegallery" src="/build/images/spacegallery.png" alt="Space Gallery" />
+    </div>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt, sed at obcaecati totam rerum quis ullam dolores labore exercitationem cum.</p>
+  </div>
+
+  <div class="moreScreen2">
+    
+  </div>
 </body>
 </html>

@@ -5,11 +5,11 @@ body {
   @apply font-sans;
 
   // Simple background with color gradient
-  @apply bg-gradient-to-b from-page-from_bg via-page-from_bg to-page-to_bg;
+  //@apply bg-gradient-to-b from-page-from_bg via-page-from_bg to-page-to_bg;
 
   // Fullscreen background image example
-  //background-image: url('../../images/background.jpg');
-  //@apply bg-center bg-cover bg-fixed;
+  // background-image: url('../../images/background.jpg');
+  // @apply bg-center bg-cover bg-fixed;
 }
 
 a, a:link, a:visited {
@@ -24,6 +24,27 @@ a, a:link, a:visited {
 
 strong {
   @apply font-semibold;
+}
+
+.firstScreen{
+  background-image: url('../../images/bg-firstScreen.jpg');
+  @apply bg-center bg-cover bg-local;
+}
+
+#dappContainer{
+  background-image: url('../../images/stars-bg-alt.png');
+  @apply bg-center bg-cover bg-local;
+}
+
+.moreScreen1{
+  //background-image: url('../../images/bg-moreScreen1.jpg');
+  background-color: #001c5d; 
+  @apply bg-center bg-cover bg-local;
+}
+
+.moreScreen2{
+  background-image: url('../../images/bg-moreScreen2.jpg');
+  @apply bg-center bg-cover bg-local;
 }
 
 main {
@@ -138,11 +159,6 @@ input[type=text] {
     &:hover {
       @apply cursor-not-allowed;
     }
-  }
-
-  &::placeholder {
-    @apply text-txt_input-placeholder_txt;
-    @apply opacity-50;
   }
 }
 
