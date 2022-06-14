@@ -73,16 +73,39 @@ p {
   width: 100%;
   height: auto;
   padding: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
+
+.topnav div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 20vw;
+    margin: 1vh;
+  }
 
 .topnav a {
   float: left;
-  display: block;
+  display: flex;
   color: #f2f2f2;
   text-align: center;
-  padding: 14px 16px;
+  padding: 1vh 1vh;
   text-decoration: none;
   font-size: 17px;
+}
+
+.topnav .i{
+  float: left;
+  display: flex;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 1vh 1vh;
+  text-decoration: none;
+  font-size: 30px;
 }
 
 .topnav a:hover {
@@ -91,11 +114,20 @@ p {
   text-decoration: none;
 }
 
-.topnav a.active {
-  background-color: #360575;
-  color: white;
+.topnav #navLogo {
+  max-height: 20vh;
+  max-width:  10vh;
 }
 
+.topnav #icon{
+  max-height: 30px;
+  max-width:  30px;
+  
+}
+
+.topnav #icon:hover{
+  filter: invert(100%)
+}
 .topnav .icon {
   display: none;
 }
@@ -121,11 +153,10 @@ p {
     text-align: left;
   }
 }
-
 .moreScreen1{
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .moreScreen2{
-  height: 100vh;
+  min-height: 100vh;
 }
