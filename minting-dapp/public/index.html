@@ -16,57 +16,25 @@
   
 </head>
 <body>  
-  <!-- <div class="topnav" id="myTopnav">
-    <div class="navLogo">
-      <img id="navLogo" src="/build/images/logo.png"/>
+  <nav class="fixed inset-x-0 top-0 left-0 flex justify-between bg-[#060126] mx-auto z-[9999]" id="mobileMenuFull">
+    <div class="flex flex-row px-7 mt-[0.8vh]" id="mobileMenuLogo">
+      <a href="#firstScreen"><img class="content-center" id="navLogo" src="/build/images/logo.png"/></a>
     </div>
-    
-    <div class="nav">
-      <a href="#news">News</a>
-      <a href="#contact">Contact</a>
-      <a href="#about">About</a>
-    </div>
+   
+    <ul class="hidden md:flex md:flex-row justify-between my-auto" id="mobileMenuNav">
+      <li class="pr-5"><a href="#dappContainer"> main/Dapp </a></li>
+      <li class="pr-5"><a href="#moreScreen1"> moreScreen1 </a></li>
+      <li class="pr-5"><a href="#moreScreen2"> moreScreen2 </a></li>
+    </ul>
 
-    <div>
-      <a href="#news" class="i"><i class="fa fa-discord-alt"></i></a>
-      <a href="#contact" class="i"><i class="fa fa-twitter"></i></a>
-      <a href="#news" class="i"><img id="icon" src="/build/images/open-sea.png"/></a>
-    </div>
-      
-    <a href="javascript:void(0);" class="icon" onclick="showMenu()">
-      <i class="fa fa-bars"></i>
-    </a>
-    <script>
-      function showMenu() {
-        var click = document.getElementById("myTopnav");
-        if (click.className === "topnav") {
-          click.className += " responsive";
-        } else {
-          click.className = "topnav";
-        }
-      }
-    </script>
-  </div> -->
-    <nav class="fixed inset-x-0 top-0 left-0 flex justify-between bg-[#060126] mx-auto z-[9999]" id="mobileMenuFull">
-      <div class="flex flex-row px-7 mt-[0.8vh]" id="mobileMenuLogo">
-        <a href="#"><img id="navLogo" src="/build/images/logo.png"/></a>
-      </div>
-      
-      <ul class="hidden md:flex md:flex-row justify-between my-auto" id="mobileMenuNav">
-         <li class="pr-5"><a> Services </a></li>
-         <li class="pr-5"><a>Porfolio</a></li>
-         <li class="pr-5"><a>About</a></li>
-         <li class="pr-5"><a>Contact</a></li>
-      </ul>
+    <ul class="hidden md:flex md:flex-row my-auto" id="mobileMenuIcon">
+      <li class="pr-5"><a href="#news" class="i"><i class="fa fa-discord-alt"></i></a></li>
+      <li class="pr-5"><a href="#contact" class="i"><i class="fa fa-twitter"></i></a></li>
+      <li class="pr-5"><a href="#contact" class="i"><i class="fa fa-facebook"></i></a></li>
+    </ul>
 
-      <ul class="hidden md:flex md:flex-row my-auto" id="mobileMenuIcon">
-       <li class="pr-5"><a href="#news" class="i"><i class="fa fa-discord-alt"></i></a></li>
-       <li class="pr-5"><a href="#contact" class="i"><i class="fa fa-twitter"></i></a></li>
-       <li class="pr-5"><a href="#contact" class="i"><i class="fa fa-facebook"></i></a></li>
-      </ul>
+    <p id="hamburgerbtn" class="md:hidden bg-purple-800 px-[4.2vh] pt-[3vh] mx-0 my-0 text-[#ddd]"><i class="fa fa-bars"></i></p>
 
-      <p id="hamburgerbtn" class="md:hidden bg-purple-800 px-[4.2vh] pt-[3vh] mx-0 my-0 text-[#ddd]"><i class="fa fa-bars"></i></p>
-      
     <script>
       let hamburger = document.getElementById('hamburgerbtn');
 
@@ -78,16 +46,18 @@
       hamburger.addEventListener('click', function(){
         mobileMenu.classList.toggle('active');
         mobileMenuFull.classList.toggle('active');
+        mobileMenuFull.classList.toggle('flex');
+        mobileMenuFull.classList.toggle('content-center');
+        mobileMenuLogo.classList.toggle('flex')
+        mobileMenuLogo.classList.toggle('content-center')
         mobileMenuIcon.classList.toggle('hidden');
         mobileMenuIcon.classList.toggle('inline-flex');
-        mobileMenuLogo.classList.toggle('aling-self-center');
-        mobileMenuLogo.classList.toggle('ml-[37vw]');
         hamburger.classList.toggle('pt-[3vh]');
       });
     </script>
 
-    </nav>
-  <div class="firstScreen">
+  </nav>
+  <div class="firstScreen" id="firstScreen">
     <img id="bannerkilla" src="/build/images/bannerkilla.png" alt="bannerkilla" />
   </div>
 
@@ -98,7 +68,7 @@
     </main>
   </div>
 
-  <div class="moreScreen1">
+  <div class="moreScreen1" id="moreScreen1">
     <h1>GALLERY</h1>
     <div class="portraits">
     <img id="spacegallery" src="/build/images/spacegallery.png" alt="Space Gallery" />
@@ -106,7 +76,7 @@
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt, sed at obcaecati totam rerum quis ullam dolores labore exercitationem cum.</p>
   </div>
 
-  <div class="moreScreen2">
+  <div class="moreScreen2" id="moreScreen2">
     
   </div>
 </body>
