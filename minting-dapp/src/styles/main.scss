@@ -23,6 +23,7 @@ h1 {
   font-weight: bold;
   font-size: 3em;
   filter: drop-shadow(30px 10px 4px #4444dd);
+  z-index: 99;
 }
 
 p {
@@ -44,11 +45,41 @@ p {
   margin-bottom: calc(32px * var(--tw-space-y-reverse));
  } */
 
-.firstScreen{
-  //border-top: 10%;  
-  //border-top: 10em;
+nav{
+  min-height: 8vh;
+  color: #ddd
+}
+
+nav a{
+  text-decoration: none;
+  color: #ddd;
+}
+
+nav a:hover{
+  text-decoration: none;
+  background-color: #ddd;
+  color:#060126;
+  border-radius: 15%;
+  padding: 1vh;
+}
+
+nav i{
+  text-decoration: none;
+  color: #ddd;
+}
+
+nav i:hover{
+  text-decoration: none;
+  background-color: #ddd;
+  color:#060126;
+  border-radius: 15%;
+  padding: 1vh;
+}
+
+ .firstScreen{
   //height: 100vh;
-  padding-top: 2em;
+  display: flex;
+  padding-top: 8vh;
 }
 
 #dappContainer{
@@ -64,13 +95,17 @@ p {
   top: 0% ;
 }
 
+.active{
+  display: block;
+}
+
 .topnav {
   overflow: hidden;
   background-color: #060126;
   position: fixed;
   z-index: 9999;
   width: 100%;
-  height: auto;
+  height: 10vh;
   padding: 0px;
   display: inline-flex;
   flex-direction: row;
@@ -97,7 +132,7 @@ p {
   font-size: 17px;
 }
 
-.topnav .i{
+.topnav.i{
   float: left;
   display: flex;
   color: #f2f2f2;
@@ -113,7 +148,7 @@ p {
   text-decoration: none;
 }
 
-.topnav #navLogo {
+#navLogo {
   max-height: 20vh;
   max-width:  10vh;
 }
@@ -140,7 +175,7 @@ p {
 }
 
 @media screen and (max-width: 600px) {
-  .topnav.responsive {position: relative;}
+  .topnav.responsive {display: contents; }
   .topnav.responsive .icon {
     position: flex;
     right: 0;
@@ -148,10 +183,19 @@ p {
   }
   .topnav.responsive a {
     float: none;
-    display: flex;
+    display: block;
     text-align: left;
   }
+  .topnav.responsive.i{
+    float: left;
+    display: contents;
+  }
+  .topnav.responsive div.nav{
+    display: contents;
+  }
 }
+
+
 .moreScreen1{
   min-height: 100vh;
 }

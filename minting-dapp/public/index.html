@@ -16,12 +16,12 @@
   
 </head>
 <body>  
-  <div class="topnav" id="myTopnav">
+  <!-- <div class="topnav" id="myTopnav">
     <div class="navLogo">
       <img id="navLogo" src="/build/images/logo.png"/>
     </div>
     
-    <div>
+    <div class="nav">
       <a href="#news">News</a>
       <a href="#contact">Contact</a>
       <a href="#about">About</a>
@@ -46,8 +46,39 @@
         }
       }
     </script>
-  </div>
+  </div> -->
+    <nav class="fixed inset-x-0 top-0 left-0 flex justify-between bg-[#060126] mx-auto z-[9999]" id="mobileMenuFull">
+      <div class="flex flex-row justify-between px-7">
+        <a href="#"><img id="navLogo" src="/build/images/logo.png"/></a>
+      </div>
+      
+      <ul class="hidden md:flex md:flex-row justify-between my-auto" id="mobileMenuNav">
+         <li class="pr-5"><a> Services </a></li>
+         <li class="pr-5"><a>Porfolio</a></li>
+         <li class="pr-5"><a>About</a></li>
+         <li class="pr-5"><a>Contact</a></li>
+      </ul>
 
+      <ul class="hidden md:flex md:flex-row aling-items my-auto">
+       <li class="pr-5"><a href="#news" class="i"><i class="fa fa-discord-alt"></i></a></li>
+       <li class="pr-5"><a href="#contact" class="i"><i class="fa fa-twitter"></i></a></li>
+       <li class="pr-5"><a href="#contact" class="i"><i class="fa fa-facebook"></i></a></li>
+      </ul>
+
+      <p id="hamburgerbtn" class="md:hidden bg-purple-800 px-auto py-auto mx-0 my-0"><i class="fa fa-discord-alt"></i></p>
+      
+    <script>
+      let hamburger = document.getElementById('hamburgerbtn');
+
+      let mobileMenu = document.getElementById('mobileMenuNav');
+      let mobileMenuFull = document.getElementById('mobileMenuFull');
+      hamburger.addEventListener('click', function(){
+        mobileMenu.classList.toggle('active');
+        mobileMenuFull.classList.toggle('active');
+      });
+    </script>
+
+    </nav>
   <div class="firstScreen">
     <img id="bannerkilla" src="/build/images/bannerkilla.png" alt="bannerkilla" />
   </div>
