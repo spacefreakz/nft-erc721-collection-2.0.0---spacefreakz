@@ -48,7 +48,7 @@
     </script>
   </div> -->
     <nav class="fixed inset-x-0 top-0 left-0 flex justify-between bg-[#060126] mx-auto z-[9999]" id="mobileMenuFull">
-      <div class="flex flex-row justify-between px-7">
+      <div class="flex flex-row justify-between px-7 mt-[0.8vh]">
         <a href="#"><img id="navLogo" src="/build/images/logo.png"/></a>
       </div>
       
@@ -59,22 +59,25 @@
          <li class="pr-5"><a>Contact</a></li>
       </ul>
 
-      <ul class="hidden md:flex md:flex-row aling-items my-auto">
+      <ul class="hidden md:flex md:flex-row my-auto" id="mobileMenuIcon">
        <li class="pr-5"><a href="#news" class="i"><i class="fa fa-discord-alt"></i></a></li>
        <li class="pr-5"><a href="#contact" class="i"><i class="fa fa-twitter"></i></a></li>
        <li class="pr-5"><a href="#contact" class="i"><i class="fa fa-facebook"></i></a></li>
       </ul>
 
-      <p id="hamburgerbtn" class="md:hidden bg-purple-800 px-auto py-auto mx-0 my-0"><i class="fa fa-discord-alt"></i></p>
+      <p id="hamburgerbtn" class="md:hidden bg-purple-800 px-auto py-auto mx-0 my-0"><i class="fa fa-bars"></i></p>
       
     <script>
       let hamburger = document.getElementById('hamburgerbtn');
 
       let mobileMenu = document.getElementById('mobileMenuNav');
       let mobileMenuFull = document.getElementById('mobileMenuFull');
+      let mobileMenuIcon = document.getElementById('mobileMenuIcon');
       hamburger.addEventListener('click', function(){
         mobileMenu.classList.toggle('active');
         mobileMenuFull.classList.toggle('active');
+        mobileMenuIcon.classList.toggle('hidden');
+        mobileMenuIcon.classList.toggle('inline-flex');
       });
     </script>
 

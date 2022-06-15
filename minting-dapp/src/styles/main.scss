@@ -45,41 +45,68 @@ p {
   margin-bottom: calc(32px * var(--tw-space-y-reverse));
  } */
 
-nav{
-  min-height: 8vh;
-  color: #ddd
-}
+// nav{
+//   min-height: 8vh;
+//   color: #ddd
+// }
 
-nav a{
+// nav a{
+//   text-decoration: none;
+//   color: #ddd;
+// }
+
+// nav a:hover{
+//   text-decoration: none;
+//   background-color: #ddd;
+//   color:#060126;
+//   border-radius: 15%;
+//   padding: 1vh;
+// }
+
+// nav i{
+//   text-decoration: none;
+//   color: #ddd;
+// }
+
+// nav i:hover{
+//   text-decoration: none;
+//   background-color: #ddd;
+//   color:#060126;
+//   border-radius: 15%;
+//   padding: 1vh;
+// }
+
+#mobileMenuNav a{
   text-decoration: none;
   color: #ddd;
-}
-
-nav a:hover{
-  text-decoration: none;
-  background-color: #ddd;
-  color:#060126;
-  border-radius: 15%;
   padding: 1vh;
 }
 
-nav i{
-  text-decoration: none;
-  color: #ddd;
-}
-
-nav i:hover{
+#mobileMenuNav a:hover{
   text-decoration: none;
   background-color: #ddd;
   color:#060126;
-  border-radius: 15%;
+  border-radius: 100%;
+}
+
+#mobileMenuIcon i{
+  text-decoration: none;
+  color: #ddd;
   padding: 1vh;
+  font-size: 1.5hv;
+}
+
+#mobileMenuIcon i:hover{
+  text-decoration: none;
+  background-color: #ddd;
+  color:#060126;
+  border-radius: 100%;
 }
 
  .firstScreen{
   //height: 100vh;
   display: flex;
-  padding-top: 8vh;
+  padding-top: 9.25vh;
 }
 
 #dappContainer{
@@ -97,6 +124,7 @@ nav i:hover{
 
 .active{
   display: block;
+  text-align: center;
 }
 
 .topnav {
