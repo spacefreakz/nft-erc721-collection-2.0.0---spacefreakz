@@ -48,7 +48,7 @@
     </script>
   </div> -->
     <nav class="fixed inset-x-0 top-0 left-0 flex justify-between bg-[#060126] mx-auto z-[9999]" id="mobileMenuFull">
-      <div class="flex flex-row justify-between px-7 mt-[0.8vh]">
+      <div class="flex flex-row px-7 mt-[0.8vh]" id="mobileMenuLogo">
         <a href="#"><img id="navLogo" src="/build/images/logo.png"/></a>
       </div>
       
@@ -65,7 +65,7 @@
        <li class="pr-5"><a href="#contact" class="i"><i class="fa fa-facebook"></i></a></li>
       </ul>
 
-      <p id="hamburgerbtn" class="md:hidden bg-purple-800 px-auto py-auto mx-0 my-0"><i class="fa fa-bars"></i></p>
+      <p id="hamburgerbtn" class="md:hidden bg-purple-800 px-[4.2vh] pt-[3vh] mx-0 my-0 text-[#ddd]"><i class="fa fa-bars"></i></p>
       
     <script>
       let hamburger = document.getElementById('hamburgerbtn');
@@ -73,11 +73,16 @@
       let mobileMenu = document.getElementById('mobileMenuNav');
       let mobileMenuFull = document.getElementById('mobileMenuFull');
       let mobileMenuIcon = document.getElementById('mobileMenuIcon');
+      let mobileMenuLogo = document.getElementById('mobileMenuLogo');
+      let hamburgerbtn = document.getElementById('hamburgerbtn');
       hamburger.addEventListener('click', function(){
         mobileMenu.classList.toggle('active');
         mobileMenuFull.classList.toggle('active');
         mobileMenuIcon.classList.toggle('hidden');
         mobileMenuIcon.classList.toggle('inline-flex');
+        mobileMenuLogo.classList.toggle('aling-self-center');
+        mobileMenuLogo.classList.toggle('ml-[37vw]');
+        hamburger.classList.toggle('pt-[3vh]');
       });
     </script>
 
